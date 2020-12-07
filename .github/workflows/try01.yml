@@ -27,7 +27,7 @@ jobs:
       - name: check ssh request & generate
         env:
           ISSUE_COMMENT: ${{ toJson(github.event.comment.body) }}
-        if: contains(github.event.comment.body, 'ssh')
+        if: contains(github.event.comment.body, '/ssh')
         run : | 
           echo "$ISSUE_COMMENT - got it! generate ssh key!"
           echo -e "\n\n\n" | ssh-keygen -t rsa 
@@ -39,5 +39,8 @@ jobs:
           name: ssh-key
           path: /home/runner/.ssh/id_rsa 
           
-
+      - name: Download the key
+        uses: actions/download-artifact@v2
+        with:
+          name: ssh-key
       
