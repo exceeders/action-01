@@ -28,7 +28,7 @@ jobs:
         env:
           ISSUE_COMMENT: ${{ toJson(github.event.comment.body) }}
         if: contains(github.event.comment.body, '#ssh')
-        uses :
+        uses : ./
           
       
       - name: Upload the key
