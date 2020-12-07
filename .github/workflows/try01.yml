@@ -25,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: check ssh request
-        if: contains(github.event.issue_comment.comment, 'ssh')
+        if: contains(github.event.issue_comment.payload.comment, 'ssh')
         run : echo "got it! generate ssh key!"
 
       
