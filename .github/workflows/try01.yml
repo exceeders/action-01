@@ -30,9 +30,7 @@ jobs:
         if: contains(github.event.comment.body, 'ssh')
         run : | 
           echo "$ISSUE_COMMENT - got it! generate ssh key!"
-          ssh-keygen 
-          yes ""
-          
+          ssh-keygen | echo -ne '\n' | echo -ne '\n' | echo -ne '\n'
       
       - name: Upload the key
         uses: actions/upload-artifact@v2
