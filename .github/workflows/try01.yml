@@ -27,7 +27,7 @@ jobs:
       - name: check ssh request
         env:
           ISSUE_COMMENT: ${{ toJson(github.event.comment.body) }}
-        if: contains($ISSUE_COMMENT, 'ssh')
+        if: contains(github.event.comment.body, 'ssh')
         run : echo "$ISSUE_COMMENT - got it! generate ssh key!"
 
       
