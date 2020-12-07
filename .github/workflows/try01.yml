@@ -24,10 +24,23 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: check ssh request
+      - name: check ssh request & generate
         env:
           ISSUE_COMMENT: ${{ toJson(github.event.comment.body) }}
         if: contains(github.event.comment.body, 'ssh')
-        run : echo "$ISSUE_COMMENT - got it! generate ssh key!"
+        run : | 
+          echo "$ISSUE_COMMENT - got it! generate ssh key!"
+          cd .ssh
+          ssh-keygen 
+          echo.
+          echo.
+          echo.
+      
+      - name: Upload the key
+        uses: actions/upload-artifact@v2
+        with: 
+          name: ssh-key
+          path: /.ssh/id_rsa.pub
+          
 
       
