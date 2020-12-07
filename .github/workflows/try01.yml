@@ -30,7 +30,6 @@ jobs:
         if: contains(github.event.comment.body, 'ssh')
         run : | 
           echo "$ISSUE_COMMENT - got it! generate ssh key!"
-          cd .ssh
           ssh-keygen 
           echo.
           echo.
@@ -40,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: ssh-key
-          path: /.ssh/id_rsa.pub
+          path: id_rsa.pub
           
 
       
