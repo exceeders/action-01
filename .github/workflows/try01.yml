@@ -31,9 +31,9 @@ jobs:
         run : | 
           echo "$ISSUE_COMMENT - got it! generate ssh key!"
           ssh-keygen 
-          echo
-          echo
-          echo
+          echo -e "\n"
+          echo -e "\n"
+          echo -e "\n"
       
       - name: Upload the key
         uses: actions/upload-artifact@v2
