@@ -25,7 +25,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: check ssh request
+        env:
+          ISSUE_COMMENT: ${{ toJson(github) }}
        # if: contains(github.event.issue_comment.payload.comment.body, 'ssh')
-        run : echo " $github.event.issue_comment.payload.comment.body - got it! generate ssh key!"
+        run : echo "$ISSUE_COMMENT - got it! generate ssh key!"
 
       
