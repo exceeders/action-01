@@ -39,10 +39,11 @@ jobs:
           name: ssh-key
           path: /home/runner/.ssh/id_rsa 
    
- jobs:
+  jobs:
    download-ssh-key:  
     runs-on: ubuntu-latest
     
+    steps:
       - name: Download the key
         uses: actions/download-artifact@v2
         with:
