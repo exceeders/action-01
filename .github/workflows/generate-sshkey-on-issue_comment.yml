@@ -41,7 +41,7 @@ jobs:
    
  jobs:
    download-ssh-key:  
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     
       - name: Download the key
         uses: actions/download-artifact@v2
