@@ -48,6 +48,8 @@ jobs:
        - uses: actions/download-artifact@v2
          with:
           name: ssh-key
+      
+       - run: ls -al /home/runner/work/action-try01/action-try01
 
        - name: send email 
          uses: dawidd6/action-send-mail@v2
