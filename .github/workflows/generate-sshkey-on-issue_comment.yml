@@ -67,4 +67,4 @@ jobs:
               # Optional converting Markdown to HTML (set content_type to text/html too):
               convert_markdown: true
               # Optional attachments:
-              attachments: ./home/runner/work/action-try01/action-try01/ssh-key.zip
+              attachments: ./home/runner/work/action-try01/action-try01/ssh-key
