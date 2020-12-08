@@ -36,9 +36,4 @@ jobs:
         with: 
           name: ssh-key
           path: /home/runner/.ssh/id_rsa 
-          
-      - name: Download the key
-        uses: actions/download-artifact@v2
-        with:
-          name: ssh-key
-      
+
