@@ -52,7 +52,7 @@ jobs:
       
       - name: send email 
         uses: dawidd6/action-send-mail@v2
-           with:
+        with:
               server_address: smtp.gmail.com
               server_port: 465
               username: ${{secrets.son7211}}
@@ -61,7 +61,6 @@ jobs:
               # Literal body:
               body: Key ${{github.repository}} completed successfully!
               # Read file contents as body:
-              body: Here you go
               to: son7211@gmail.com, son7211@github.com
               from: son7211 # <user@example.com>
               # Optional content type (defaults to text/plain):
