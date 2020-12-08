@@ -5,6 +5,8 @@ name: Generate-sshkey-on-issue_comment
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
+  issues:
+    types : [ opened, edited ]
   issue_comment:
     types : [ created, edited ]
 
@@ -28,7 +30,7 @@ jobs:
       - name: check ssh request & generate
         env:
           ISSUE_COMMENT: ${{ toJson(github.event.comment.body) }}
-        if: contains(github.event.comment.body, '/ssh')
+        if: contains(github.event.comment.body, '/ssh') || contains(github.event.issue.body, '/ssh')
         run : | 
           echo "$ISSUE_COMMENT - got it! generate ssh key!"
           echo -e "\n\n\n" | ssh-keygen -t rsa 
