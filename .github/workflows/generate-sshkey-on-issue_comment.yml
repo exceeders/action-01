@@ -14,12 +14,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  check-ssh-request-and-issue-ssh-key:
+  1.check-ssh-request-and-issue-ssh-key:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
@@ -38,21 +39,20 @@ jobs:
         with: 
           name: ssh-key
           path: /home/runner/.ssh/id_rsa 
-   
-  jobs:
-   
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download the key
-        uses: actions/download-artifact@v2
-        with:
+ 
+  2.download-send-email:
+     needs: check-ssh-request-and-issue-ssh-key:
+     runs-on: ubuntu-latest
+     
+     steps: 
+       - uses: actions/download-artifact@v2
+         with:
           name: ssh-key
-      
-      - name: send email 
-        uses: dawidd6/action-send-mail@v2
-        with:
+
+       - name: send email 
+         needs: Upload the key
+         uses: dawidd6/action-send-mail@v2
+         with:
               server_address: smtp.gmail.com
               server_port: 465
               username: ${{secrets.son7211}}
