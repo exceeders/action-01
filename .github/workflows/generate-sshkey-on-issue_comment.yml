@@ -50,7 +50,6 @@ jobs:
           name: ssh-key
 
        - name: send email 
-         needs: Upload the key
          uses: dawidd6/action-send-mail@v2
          with:
               server_address: smtp.gmail.com
