@@ -41,7 +41,7 @@ jobs:
           path: /home/runner/.ssh/id_rsa 
  
   2.download-send-email:
-     needs: check-ssh-request-and-issue-ssh-key:
+     needs: 1.check-ssh-request-and-issue-ssh-key
      runs-on: ubuntu-latest
      
      steps: 
