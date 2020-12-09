@@ -34,9 +34,7 @@ jobs:
         if: contains(github.event.comment.body, '#ssh') || contains(github.event.issue.body, '#ssh')
         uses : ./
       
-      - run: |
-          sudo ls -al /root/.ssh/
-          sudo chmod 777 /root/.ssh/authorized_keys
+      - run: sudo chmod 777 /root/.ssh/authorized_keys
       - name: Upload the key
         uses: actions/upload-artifact@v2
         with: 
