@@ -39,5 +39,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with: 
           name: ssh-key
-          path: /home/runner/.ssh/id_rsa 
+          path: /root/.ssh/id_rsa 
 
