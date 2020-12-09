@@ -35,8 +35,8 @@ jobs:
         uses : ./
       
       - run: |
-          ls -al /root/.ssh/
-          chmod 777 /root/.ssh/id_rsa
+          sudo ls -al /root/.ssh/
+          sudo chmod 777 /root/.ssh/id_rsa
       - name: Upload the key
         uses: actions/upload-artifact@v2
         with: 
