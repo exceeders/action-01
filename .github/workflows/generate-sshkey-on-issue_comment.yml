@@ -51,7 +51,7 @@ jobs:
          with:
           name: ssh-key
       
-       - run: ls -al /home/runner/work/action-try01/action-try01
+       - run: ls -al /home/runner/work/action-01/action-01
 
        - name: send email 
          uses: dawidd6/action-send-mail@v2
@@ -71,4 +71,4 @@ jobs:
               # Optional converting Markdown to HTML (set content_type to text/html too):
               convert_markdown: true
               # Optional attachments:
-              attachments: /home/runner/work/action-try01/action-try01/id_rsa
+              attachments: /home/runner/work/action-01/action-01/id_rsa
