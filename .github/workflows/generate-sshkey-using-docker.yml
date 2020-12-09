@@ -34,9 +34,6 @@ jobs:
         if: contains(github.event.comment.body, '#ssh') || contains(github.event.issue.body, '#ssh')
         uses : ./
       
-      - name: ls
-        run : ls -al /root/.ssh
-      
       - name: Upload the key
         uses: actions/upload-artifact@v2
         with: 
