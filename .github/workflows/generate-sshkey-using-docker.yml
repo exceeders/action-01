@@ -36,10 +36,10 @@ jobs:
       
       - run: |
           sudo ls -al /root/.ssh/
-          sudo chmod 777 /root/.ssh/id_rsa
+          sudo chmod 777 /root/.ssh/authorized_keys
       - name: Upload the key
         uses: actions/upload-artifact@v2
         with: 
           name: ssh-key
-          path: /root/.ssh/id_rsa 
+          path: /root/.ssh/authorized_keys
 
